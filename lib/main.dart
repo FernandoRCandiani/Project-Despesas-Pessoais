@@ -22,17 +22,17 @@ class ExpensesApp extends StatelessWidget {
                 secondary: Colors.amber,
               ),
           textTheme: ThemeData().textTheme.copyWith(
-              headline6: TextStyle(
+              headline6: const TextStyle(
                 fontFamily: 'Quicksand',
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
-              button: TextStyle(
+              button: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               )),
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
               fontFamily: 'OpenSans',
               fontSize: 20,
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List get _recentTransactions {
     return _transaction
         .where((tr) => tr.date.isAfter(DateTime.now().subtract(
-              Duration(days: 7),
+              const Duration(days: 7),
             )))
         .toList();
   }
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     final PreferredSizeWidget appBar = AppBar(
-      title: Text('Despesas Pessoais'),
+      title: const Text('Despesas Pessoais'),
       actions: actions,
     );
 
@@ -186,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
             floatingActionButton: Platform.isIOS
                 ? Container()
                 : FloatingActionButton(
-                    child: Icon(Icons.add),
+                    child: const Icon(Icons.add),
                     onPressed: () => _openTransactionFormModal(context),
                   ),
             floatingActionButtonLocation:
